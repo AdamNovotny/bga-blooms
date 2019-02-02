@@ -1,0 +1,616 @@
+/**
+ *------
+ * BGA framework: © Gregory Isabelli <gisabelli@boardgamearena.com> & Emmanuel Colin <ecolin@boardgamearena.com>
+ * blooms implementation : © Adam Novotny <adam.novotny.ck@gmail.com>
+ *
+ * This code has been produced on the BGA studio platform for use on http://boardgamearena.com.
+ * See http://en.boardgamearena.com/#!doc/Studio for more information.
+ * -----
+ *
+ * blooms.css
+ *
+ * blooms stylesheet
+ *
+ */
+
+/*
+    This is the CSS stylesheet of your game User Interface.
+    
+    Styles defined on this file will be applied to the HTML elements you define in your
+    HTML template (blooms_blooms.tpl), and to HTML elements you create dynamically
+    (in blooms.js).
+    
+    Usually, you are using CSS to:
+    
+    1°) define the overall layout of your game
+        (ex: place the board on the top left, place player's hand beside, place the deck on the right, ...).
+
+    2°) create your CSS-sprites:
+        All images of your games should be gathered into a small number of image files. Then, using
+        background-image and background-position CSS properties, you create HTML blocks that can 
+        display these images correctly (see example below).
+    
+    3°) ... anything else:
+        It is really easy to add and remove CSS classes dynamically from your Javascript with
+        dojo.addClass and dojo.removeClass. It is also easy to check if an element has a class
+        (dojo.hasClass) or to get all elements with a specific class (dojo.query). This is why,
+        very often, using CSS classes for the logic of your user interface allow you to do complex
+        thing easily.
+        
+        
+     Note: on the production platform, this file will be compressed and comments will be removed.
+           Consequently, don't hesitate to put as many comments as necessary.
+*/
+
+@import url(../../../css/csslayer.css); /* Note: you must not use any @import directive other than this one */
+
+/********* You can start writing your CSS below this line: **********/
+
+.board_wrap{
+    margin: 0 auto;
+}
+
+.board{
+    width: 650px;
+    height: 590px;
+    margin: 0px auto;
+    position: relative;
+    display: block;
+}
+
+.innerboard {
+    position: absolute;
+    display: block;
+    width: 650px;
+    height: 590px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; 
+    -webkit-box-pack: center; 
+    -webkit-justify-content: center; 
+        -ms-flex-pack: center; 
+            justify-content: center; 
+    -webkit-box-align: center; 
+    -webkit-align-items: center; 
+        -ms-flex-align: center; 
+            align-items: center;
+}
+
+/* ------ HEX ROW------- */
+
+.hexrow{
+    margin: 3.45% auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+    -webkit-justify-content: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    position: relative;
+}
+
+.center {
+    display: block;
+}   
+
+/*----------------------------- HEX TILES-------------------------*/
+
+.hexagon_wrapper {
+    display: block;
+    position: relative;
+    top: 18%;
+}
+
+.hexagon {
+    position: relative;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    /* background-color: #F1E0D6; */
+    background-color: #E6C194;
+}
+
+.hexagon4 {width: 68px;height: 39.26px;}
+.hexagon5 {width: 68px;height: 39.26px;}
+.hexagon6 {width: 48px;height: 27.713px;}
+
+.hexagonbackground {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+
+    position: relative;
+    background-color: #CA9F70;
+    -webkit-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+            transform: rotate(90deg);
+    /* filter: drop-shadow(2px 2px 5px) drop-shadow(2px -2px 5px); */
+}
+
+.hexagonbackground4 { width: 410px; height: 236.714px;}
+.hexagonbackground5 { width: 530px; height: 305.996px;}
+.hexagonbackground6 { width: 472px; height: 272.509px;}
+
+.hexagonbackground:after, .hexagonbackground:before {
+    background-color: #CA9F70 !important;
+}
+
+.hexagon:after, .hexagon:before, .hexagonbackground:after, .hexagonbackground:before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: calc(70.71% - 1px);
+    height: calc(122.46% - 1px);
+
+    -webkit-transform-origin: 0 0;
+        -ms-transform-origin: 0 0;
+            transform-origin: 0 0;
+
+    background-color: #E6C194;
+}
+
+.hexagon:before, .hexagonbackground:before {
+    -webkit-transform: scale(1, 0.579) translate(70.71136%, -70.71136%) rotate(45deg);
+        -ms-transform: scale(1, 0.579) translate(70.71136%, -70.71136%) rotate(45deg);
+            transform: scale(1, 0.579) translate(70.71136%, -70.71136%) rotate(45deg);
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+}
+
+.hexagon:after, .hexagonbackground:after {
+    -webkit-transform: scale(1, 0.579) translate(70.71136%, 70.71136%) rotate(45deg);
+        -ms-transform: scale(1, 0.579) translate(70.71136%, 70.71136%) rotate(45deg);
+            transform: scale(1, 0.579) translate(70.71136%, 70.71136%) rotate(45deg);
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+}
+
+.hexagonbackground6:before {
+    -webkit-transform: scale(1, 0.59) translate(70.71136%, -74.71136%) rotate(45deg);
+        -ms-transform: scale(1, 0.59) translate(70.71136%, -74.71136%) rotate(45deg);
+            transform: scale(1, 0.59) translate(70.71136%, -74.71136%) rotate(45deg);
+}
+
+.hexagonbackground6:after {
+    -webkit-transform: scale(1, 0.59) translate(70.71136%, 71.71136%) rotate(45deg);
+        -ms-transform: scale(1, 0.59) translate(70.71136%, 71.71136%) rotate(45deg);
+            transform: scale(1, 0.59) translate(70.71136%, 71.71136%) rotate(45deg);
+}
+
+.hexagonbackground4:before, .hexagonbackground5:before {
+    -webkit-transform: scale(1, 0.579) translate(70.71136%, -72.71136%) rotate(45deg);
+        -ms-transform: scale(1, 0.579) translate(70.71136%, -72.71136%) rotate(45deg);
+            transform: scale(1, 0.579) translate(70.71136%, -72.71136%) rotate(45deg);
+}
+
+.hexagonbackground4:after, .hexagonbackground5:after {
+    -webkit-transform: scale(1, 0.579) translate(70.71136%, 72.71136%) rotate(45deg);
+        -ms-transform: scale(1, 0.579) translate(70.71136%, 72.71136%) rotate(45deg);
+            transform: scale(1, 0.579) translate(70.71136%, 72.71136%) rotate(45deg);
+}
+
+/* .noborders {
+    border-left: 1px  transparent;
+    border-right: 1px  transparent;
+}
+.noborders:before {
+    border-left: 1px transparent;
+    border-top: 1px transparent;
+}
+.noborders:after {
+    border-bottom: 1px transparent;
+    border-right: 1px transparent;
+} */
+
+.colorscheme1, .colorscheme1:after, .colorscheme1:before {
+    background-color: #E6C194 !important;
+}
+
+.colorschemebackground1, .colorschemebackground1:after, .colorschemebackground1:before {
+    background-color: #CA9F70 !important;
+}
+
+/* .colorscheme2, .colorscheme2:after, .colorscheme2:before {
+    background-color: #F1E0D6 !important;
+}
+
+.colorschemebackground2, .colorschemebackground2:after, .colorschemebackground2:before {
+    background-color: #FFFFFF !important;
+} */
+
+.hole {
+    visibility: hidden;
+}
+
+
+/*---------------------HEX CONTENT SELECTION----------------------------*/
+
+.hooverable:hover .insidehex {
+    visibility: visible;
+    /* transform: rotate(0deg) scale(1.0); */
+}
+
+.insidehex {
+    position: absolute;
+    left: -35%;
+    top: 9%;
+    visibility: hidden;
+    z-index: 5;
+    overflow: hidden;
+    width: 100%;
+    height: 200%;
+    -webkit-transform: translate(35%, -29.5%);
+        -ms-transform: translate(35%, -29.5%);
+            transform: translate(35%, -29.5%);
+}
+
+.meeplebutton {
+    position: absolute;
+    cursor: pointer;
+    -webkit-transform: rotate(180deg) translate(0px, -50%) scale(0);
+        -ms-transform: rotate(180deg) translate(0px, -50%) scale(0);
+            transform: rotate(180deg) translate(0px, -50%) scale(0);
+    -webkit-transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+        -o-transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+        transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.5s;
+}
+  .meeplebutton:before, .meeplebutton:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    -webkit-transform-origin: 100% 0;
+        -ms-transform-origin: 100% 0;
+            transform-origin: 100% 0;
+    -webkit-transform: skewY(-30deg);
+        -ms-transform: skewY(-30deg);
+            transform: skewY(-30deg);
+}
+  .meeplebutton:before {
+    -webkit-transform: skewY(30deg);
+        -ms-transform: skewY(30deg);
+            transform: skewY(30deg);
+}
+
+.meeplebutton:nth-child(2) {
+    left: 89% !important;
+    -webkit-transform: rotate(0deg) translate(0px, 50%) scale(0);
+        -ms-transform: rotate(0deg) translate(0px, 50%) scale(0);
+            transform: rotate(0deg) translate(0px, 50%) scale(0);
+}
+
+.meeplebutton.hexagon4 {    width: 35.5px; height: 40px; left: -70px;  } 
+.meeplebutton.hexagon5 {    width: 35.5px; height: 40px; left: -70px; } 
+.meeplebutton.hexagon6 {    width: 25px; height: 29px; left: -50px; }
+
+.meeplebutton.color1.schema1 { background:#2D2D2B; } .meeplebutton.color2.schema1 {background:  #8CB4AA; } 
+.meeplebutton.color3.schema1 {background:#B24951; } .meeplebutton.color4.schema1 {background: #F6BE41; }
+
+/* .meeplebutton.color1.schema2 { background:#2D2D2B; } .meeplebutton.color3.schema2 {background:  #1F5F23; } 
+.meeplebutton.color2.schema2 {background:#B0B0B0; } .meeplebutton.color4.schema2 {background: #A4DAA8; }
+
+.meeplebutton.color1.schema3  { background:#2D2D2B; } .meeplebutton.color3.schema3  {background:  #5F215D; } 
+.meeplebutton.color2.schema3  {background:#B0B0B0; } .meeplebutton.color4.schema3  {background: #D8A4D8; }
+
+.meeplebutton.color1.schema4  { background:#215B7D; } .meeplebutton.color3.schema4 {background:  #901917; } 
+.meeplebutton.color2.schema4 {background:#88D0FF; } .meeplebutton.color4.schema4 {background: #FF8690; }
+
+.meeplebutton.color1.schema5  { background:#056505; } .meeplebutton.color3.schema5  {background:  #B22D2B; } 
+.meeplebutton.color2.schema5  {background:#AAE8A6; } .meeplebutton.color4.schema5  {background: #FFA8BA; }
+
+.meeplebutton.color1.schema6  { background:#252525; } .meeplebutton.color3.schema6 {background:  #901917; } 
+.meeplebutton.color2.schema6  {background:#B0B0B0; } .meeplebutton.color4.schema6 {background: #FF8690; } */
+
+.hooverable:hover .meeplebutton {
+    left: -1px;
+    -webkit-transform: rotate(180deg) translate(0px, -50%) scale(1);
+        -ms-transform: rotate(180deg) translate(0px, -50%) scale(1);
+            transform: rotate(180deg) translate(0px, -50%) scale(1);
+}
+
+.hooverable:hover .meeplebutton:nth-child(2) {
+    left: 49% !important;
+    -webkit-transform: rotate(0deg) translate(0px, 50%) scale(1);
+        -ms-transform: rotate(0deg) translate(0px, 50%) scale(1);
+            transform: rotate(0deg) translate(0px, 50%) scale(1);
+}
+
+
+/*--------------------MEEPLES-----------------------------*/
+
+.meepleitem {
+    position: absolute;
+    width: 68px;
+    height: 80px;
+    -webkit-background-size: cover;
+            background-size: cover;
+    background-image: url('img/meeplesprite.png');
+    visibility: visible;
+
+        -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+
+}
+
+.meepleitem.color1 { background-position-x: 0%; } .meepleitem.color2 { background-position-x: 33.33%; } 
+.meepleitem.color3 {background-position-x: 66.66%; } .meepleitem.color4 { background-position-x: 100%; }
+
+.meepleitem.size4 {width: 70px; height: 80.829px;}
+.meepleitem.size5 {width: 70px; height: 80.829px;}
+.meepleitem.size6 {width: 50px; height: 57.735px;}
+
+.meepleitem.clickable {
+    cursor: pointer;
+}
+
+.logmeeple {
+    position: relative;
+    width: 54px;
+    height: 62px;
+    display: inline-block;
+}
+
+.panelmeeple {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.small {
+    width: 30px; 
+    height: 34.641px;
+    top: 13px;
+    left: 1px;
+}
+
+.unvisible {
+    visibility: hidden;
+}
+
+.meepleitem.meepleschema1 {background-image: url('img/meeplesprite.png');}
+/* .meepleitem.meepleschema2 {background-image: url('img/meeplesprite_scheme2.png');}
+.meepleitem.meepleschema3 {background-image: url('img/meeplesprite_scheme3.png');}
+.meepleitem.meepleschema4 {background-image: url('img/meeplesprite_scheme4.png');}
+.meepleitem.meepleschema5 {background-image: url('img/meeplesprite_scheme5.png');}
+.meepleitem.meepleschema6 {background-image: url('img/meeplesprite_scheme6.png');} */
+
+
+/*--------------------FENCES-----------------------------*/
+
+.fence {
+    width: 70px;
+    height: 44.415px;
+    position: absolute;
+    border-left: 4px solid red;
+    border-right: 4px solid transparent;
+    -webkit-transform-origin: center center;
+        -ms-transform-origin: center center;
+            transform-origin: center center;
+    visibility: visible;
+    pointer-events: none;
+}
+
+.fence.size4 { width: 70px; height: 44.415px; } .fence.size5 { width: 70px; height: 44.415px; } .fence.size6 { width: 50px; height: 31.713px; }
+
+.fence.fence0 {
+    -webkit-transform: rotate(60deg);
+        -ms-transform: rotate(60deg);
+            transform: rotate(60deg);
+}
+
+.fence.fence1 {
+    -webkit-transform: rotate(120deg);
+        -ms-transform: rotate(120deg);
+            transform: rotate(120deg);
+}
+
+.fence.fence2 {
+    -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+
+.fence.fence3 {
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+}
+
+.fence.fence4 {
+    -webkit-transform: rotate(-60deg);
+        -ms-transform: rotate(-60deg);
+            transform: rotate(-60deg);
+}
+
+.fence.fence5 {
+    -webkit-transform: rotate(-120deg);
+        -ms-transform: rotate(-120deg);
+            transform: rotate(-120deg);
+}
+
+.fencelastmove {
+    border-left: 4px dotted white;
+}
+
+.fencelastmove.unvisible {
+    visibility: hidden;
+}
+
+.fence.yellowdotted {
+    border-left: 4px dotted yellow;
+}
+
+/*----------------- Visual selection------------*/
+
+/* .selectionContainer {
+    width: auto;
+    height: 100px;
+    margin-bottom: 100px;
+}
+
+.selectionHeader {
+    width: max-content;
+    margin: 0 auto 10px auto;
+    position: relative;
+    font-size: 20px;
+}
+
+.selectionGroup{
+    width: max-content;
+    margin: 0 auto;
+    position: relative;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropbtn {
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdownContent {
+    display: none;
+    position: absolute;
+    background-color: #ece3e3;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdownContent div {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdownContent>div:hover {background-color: rgb(204, 201, 201); cursor: pointer;}
+.dropdown:hover .dropdownContent {display: block;}
+.dropdown:hover .dropbtn {background-color: #555755;}
+
+ 
+
+.colorSelector {
+    height: 30px;
+    padding: 0px !important;
+    border: 1px solid black;
+    background-color: #E6C194;
+}
+
+.colorSelector.schema1 {
+    background-color: #F1E0D6;
+}
+
+.stoneSelector {
+    height: 30px;
+    padding: 0px !important;
+    background-image: linear-gradient(to right,
+    #2D2D2B, #2D2D2B 25%, #8CB4AA 25%, #8CB4AA 50%, #B24951 50%, #B24951 75%, #F6BE41 75%);
+}
+
+.stoneSelector.schema2 {
+    background-image: linear-gradient(to right,
+    #2D2D2B, #2D2D2B 25%, #B0B0B0 25%, #B0B0B0 50%, #1F5F23 50%, #1F5F23 75%, #A4DAA8 75%);
+}
+.stoneSelector.schema3 {
+    background-image: linear-gradient(to right,
+    #2D2D2B, #2D2D2B 25%, #B0B0B0 25%, #B0B0B0 50%, #5F215D 50%, #5F215D 75%, #D8A4D8 75%);
+}
+.stoneSelector.schema4 {
+    background-image: linear-gradient(to right,
+    #215B7D, #215B7D 25%, #88D0FF 25%, #88D0FF 50%, #901917 50%, #901917 75%, #FF8690 75%);
+}
+.stoneSelector.schema5 {
+    background-image: linear-gradient(to right,
+    #056505, #056505 25%, #AAE8A6 25%, #AAE8A6 50%, #B22D2B 50%, #B22D2B 75%, #FFA8BA 75%);
+}
+.stoneSelector.schema6 {
+    background-image: linear-gradient(to right,
+    #252525, #252525 25%, #B0B0B0 25%, #B0B0B0 50%, #901917 50%, #901917 75%, #FF8690 75%);
+} */
+
+
+/* holes  */
+
+.holepatch {
+    background-image: url('../../../img/layout/back-main.jpg');
+
+    background-attachment: fixed;
+    position: absolute;
+}
+
+.holepatch.size4 {
+    width: 72px;
+    height: 82px;
+}
+
+.holepatch.size5 {
+    width: 72px;
+    height: 82px;
+}
+
+.holepatch.size6 {
+    width: 58px;
+    height: 61px;
+}
+
+.notation {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    visibility: visible;
+    opacity: 0.5;
+}
+
+.notation.unvisible {
+    visibility: hidden;
+}
+
+.notationhole {
+    visibility: hidden;
+}
+
+/*---------other ----------*/
+
+/* .buttonheader {
+    width: 100px;
+    height: 20px;
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.buttonheader:nth-child(1) {
+    left: 10px;
+}
+
+.buttonheader:nth-child(3) {
+    left: -10px;
+}
+
+.selectionGroup:nth-child(1){
+    height: 30px ;
+} */
+
+
+/*----------------- IE+Edge ------------*/
+
+@supports (-ms-ime-align: auto) {
+    .hexrow {
+        justify-content: space-around;
+    }
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    .hexrow {
+        justify-content: space-around;
+    }
+}
+
