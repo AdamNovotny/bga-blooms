@@ -51,7 +51,8 @@ $this->row_percentage = array(
 
 $this->holes = array(
   4 => array(), 
-  5 => array( array(2,3),array(6,3)  ),
+  // 5 => array( array(2,3),array(6,3)  ),
+  5 => array( array(4,4) ),
   6 => array( array(3,2),array(3,6),array(7,2),array(7,6)   ),
   7 => array(), 
 );
