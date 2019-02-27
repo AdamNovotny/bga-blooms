@@ -43,10 +43,15 @@ $game_options = array(
         'name' => totranslate('X value'),
 
         'values' => array(
-                    15 => array( 'name' => '15', 'tmdisplay' => totranslate('X value = 15') ),
-                    5 => array( 'name' => '5', 'tmdisplay' => totranslate('X value = 5') ),
-                    10 => array( 'name' => '10', 'tmdisplay' => totranslate('X value = 10') ),
-                    20 => array( 'name' => '20', 'tmdisplay' => totranslate('X value = 20') ),
+                    // 15 => array( 'name' => '15', 'tmdisplay' => totranslate('X value = 15') ),
+                    // 5 => array( 'name' => '5', 'tmdisplay' => totranslate('X value = 5') ),
+                    // 10 => array( 'name' => '10', 'tmdisplay' => totranslate('X value = 10') ),
+                    // 20 => array( 'name' => '20', 'tmdisplay' => totranslate('X value = 20') ),
+
+                    15 => array( 'name' => '15', ),
+                    5 => array( 'name' => '5', ),
+                    10 => array( 'name' => '10',  ),
+                    20 => array( 'name' => '20',  ),
         ),
         'displaycondition' => array(
             15 => array(  'type' => 'otheroption',  'id' => 100,  'value' => array(4)  ),  
@@ -57,15 +62,22 @@ $game_options = array(
     ),
 
     102 => array(
-        'name' => totranslate('X value'),
+        'name' => totranslate('X value2'),
 
         'values' => array(
-                    20 => array( 'name' => '20', 'tmdisplay' => totranslate('X value = 20')),
-                    5 => array( 'name' => '5', 'tmdisplay' => totranslate('X value = 5') ),
-                    10 => array( 'name' => '10', 'tmdisplay' => totranslate('X value = 10') ),
-                    15 => array( 'name' => '15', 'tmdisplay' => totranslate('X value = 15') ),
-                    25 => array( 'name' => '25', 'tmdisplay' => totranslate('X value = 25') ),
+                    // 20 => array( 'name' => '20', 'tmdisplay' => totranslate('X value = 20')),
+                    // 5 => array( 'name' => '5', 'tmdisplay' => totranslate('X value = 5') ),
+                    // 10 => array( 'name' => '10', 'tmdisplay' => totranslate('X value = 10') ),
+                    // 15 => array( 'name' => '15', 'tmdisplay' => totranslate('X value = 15') ),
+                    // 25 => array( 'name' => '25', 'tmdisplay' => totranslate('X value = 25') ),
+
+                    20 => array( 'name' => '20',),
+                    5 => array( 'name' => '5',),
+                    10 => array( 'name' => '10', ),
+                    15 => array( 'name' => '15',),
+                    25 => array( 'name' => '25',),
         ),
+
         'displaycondition' => array(
             20 => array(  'type' => 'otheroption',  'id' => 100,  'value' => array(5)  ),
             5 => array(  'type' => 'otheroption',  'id' => 100,  'value' => array(5)  ),
@@ -76,15 +88,22 @@ $game_options = array(
     ),
 
     103 => array(
-        'name' => totranslate('X value'),
+        'name' => totranslate('X value3'),
 
         'values' => array(
-                    25  => array( 'name' => '25', 'tmdisplay' => totranslate('X value = 25')),
-                    5 => array( 'name' => '5', 'tmdisplay' => totranslate('X value = 5') ),
-                    10 => array( 'name' => '10', 'tmdisplay' => totranslate('X value = 10') ),
-                    15 => array( 'name' => '15', 'tmdisplay' => totranslate('X value = 15') ),
-                    20 => array( 'name' => '20', 'tmdisplay' => totranslate('X value = 20') ),
-                    30 => array( 'name' => '30', 'tmdisplay' => totranslate('X value = 30') ),                  
+                    // 25  => array( 'name' => '25', 'tmdisplay' => totranslate('X value = 25')),
+                    // 5 => array( 'name' => '5', 'tmdisplay' => totranslate('X value = 5') ),
+                    // 10 => array( 'name' => '10', 'tmdisplay' => totranslate('X value = 10') ),
+                    // 15 => array( 'name' => '15', 'tmdisplay' => totranslate('X value = 15') ),
+                    // 20 => array( 'name' => '20', 'tmdisplay' => totranslate('X value = 20') ),
+                    // 30 => array( 'name' => '30', 'tmdisplay' => totranslate('X value = 30') ),    
+                    
+                    25  => array( 'name' => '25', ),
+                    5 => array( 'name' => '5',  ),
+                    10 => array( 'name' => '10', ),
+                    15 => array( 'name' => '15',  ),
+                    20 => array( 'name' => '20',  ),
+                    30 => array( 'name' => '30', ),   
         ),
         'displaycondition' => array(
             25  => array(  'type' => 'otheroption',  'id' => 100,  'value' => array(6)  ),   

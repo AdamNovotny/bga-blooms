@@ -19,7 +19,6 @@ define([
     "dojo","dojo/_base/declare",
     "ebg/core/gamegui",
     "ebg/counter"
-    //lllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll
 ],
 function (dojo, declare) {
     return declare("bgagame.blooms", ebg.core.gamegui, {
@@ -109,6 +108,15 @@ function (dojo, declare) {
 
             dojo.connect(dojo.query('#preference_control_104')[0],'change', this ,'changeCoordinations');
             dojo.connect(dojo.query('#preference_control_105')[0],'change', this ,'changeLastmoves');
+
+            var scorefraction = "<span style=\"font-weight:bold;\"> / "+gamedatas.x_value+" </span>";
+            var scores = dojo.query('.player_score');
+            
+            for (var i=0;i<scores.length;i++){
+               dojo.place(scorefraction, scores[i],2); 
+            }
+            
+
 
             // Setup game notifications to handle (see "setupNotifications" method below)
             this.setupNotifications();

@@ -144,6 +144,8 @@ class blooms extends Table
         $result['board'] = self::getObjectListFromDB( "SELECT board_x x, board_y y, board_player player, board_type color, board_lastmove lastmove FROM board WHERE board_player IS NOT NULL" );
 
         $result['variant'] = self::getGameStateValue( 'board_size');
+
+        $result['x_value'] = self::getgameStateValue("x_value".$result['variant'] );
   
         return $result;
     }
@@ -564,6 +566,8 @@ class blooms extends Table
                 self::setStat( $oponent_score/self::getStat('player_captured_blooms' , $oponent_player ), 'player_average_lost_stones_per_bloom', $player ); 
                 self::setStat( $oponent_score/self::getStat('player_captured_blooms' , $oponent_player ), 'player_average_captured_stones_per_bloom', $oponent_player ); 
             }
+
+            self::DbQuery( "UPDATE player SET player_score= '".self::getgameStateValue($string)."' WHERE player_id='$player' " );
 
             $this->gamestate->nextState("endGame");
         } else {
