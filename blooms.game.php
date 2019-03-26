@@ -94,10 +94,11 @@ class blooms extends Table
         self::DbQuery( $sql );
 
         // Initial setup
-        foreach($this->holes[$variant] as $hole) {
-            $sql = "UPDATE board SET board_player = 'hole' WHERE board_x = '$hole[0]' and board_y = '$hole[1]' ";
-            self::DbQuery( $sql );
-        }
+        // Holes are now removed
+        // foreach($this->holes[$variant] as $hole) {
+        //     $sql = "UPDATE board SET board_player = 'hole' WHERE board_x = '$hole[0]' and board_y = '$hole[1]' ";
+        //     self::DbQuery( $sql );
+        // }
 
 
         // Init global values with their initial values
