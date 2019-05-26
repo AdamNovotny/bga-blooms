@@ -9,7 +9,8 @@
 -- See http://en.boardgamearena.com/#!doc/Studio for more information.
 -------
 -->
-
+<!-- tpl 
+-->
 <div id="board_wrap" class="board_wrap">
     <div id="board" class="board">
 
